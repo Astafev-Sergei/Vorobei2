@@ -1,0 +1,31 @@
+import SwiftUI
+
+struct ContentView: View {
+@State private var width = 300.0
+
+    var body: some View {
+        VStack {
+            Group {
+                Text("Марафон ")
+                    .foregroundColor(.gray) +
+                Text("по ")
+                    .foregroundColor(.black)
+                    .fontWeight(.medium) +
+                Text("SwiftUI")
+                    .foregroundColor(.black)
+                    .fontWeight(.medium) +
+                Text(" \"Отцовский пинок\"")
+                    .foregroundColor(.blue)
+                    .fontWeight(.bold)
+                    .font(.system(size: 30))
+            }
+            .multilineTextAlignment(.leading)
+            .frame(width: width, height: 250)
+            .border(Color.red)
+
+            Slider(value: $width, in: 100...300)
+                .padding(.horizontal, 20)
+        }
+    }
+}
+
